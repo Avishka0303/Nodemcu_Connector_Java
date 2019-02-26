@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.Double?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="1080.0" prefWidth="1920.0" styleClass="parent" stylesheets="@../../cssFiles/homeCSS.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="robot.view.ctrl.HomeFXController">
+   <children>
+      <ImageView fx:id="backImg" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox prefHeight="1080.0" prefWidth="450.0" styleClass="sidebar">
+         <children>
+            <Label prefHeight="100.0" prefWidth="450.0" style="-fx-background-color: #0E8DE2;" text="Admin Panel" textFill="#fff4f4">
+               <font>
+                  <Font name="Ebrima" size="42.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <HBox prefHeight="76.0" prefWidth="450.0">
+               <children>
+                  <ImageView fitHeight="70.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/login/005_008_robot_baby_friend_gift_present_samodelkin-512.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Hyperlink minHeight="-Infinity" minWidth="-Infinity" onAction="#robotControlOnAction" prefHeight="44.0" prefWidth="177.0" text="Robot Controller" textFill="#eee5e5">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Hyperlink>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="448.0" prefHeight="1080.0" prefWidth="1473.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="1409.0" styleClass="sidebar">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#f2eaea" />
+               </effect>
+               <children>
+                  <Label layoutX="63.0" layoutY="24.0" text="Dashboard" textFill="#979191f7">
+                     <font>
+                        <Font name="Ebrima" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="150.0" right="20.0" top="50.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="169.0" prefWidth="1473.0" style="-fx-background-color: #557FFF;">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="47.69" radius="17.415" width="23.97" />
+               </effect>
+               <children>
+                  <Button fx:id="startBtn" layoutX="149.0" layoutY="29.0" mnemonicParsing="false" onAction="#startConnection" prefHeight="120.0" prefWidth="120.0">
+                     <font>
+                        <Font name="Ebrima" size="32.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#06f812" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill></Button>
+                  <ImageView fx:id="stopIndicator" fitHeight="117.0" fitWidth="111.0" layoutX="28.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#b99090" height="41.76" radius="16.675" width="26.94" />
+                     </effect>
+                     <image>
+                        <Image url="@../../assets/login/BrilliantSorrowfulHyena-max-1mb.gif" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="msg" layoutX="443.0" layoutY="105.0" prefHeight="35.0" prefWidth="836.0">
+                     <font>
+                        <Font name="Ebrima" size="24.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="pbar" layoutX="443.0" layoutY="29.0" prefHeight="26.0" prefWidth="836.0" progress="0.0" />
+                  <ProgressIndicator fx:id="pcircle" layoutX="1310.0" layoutY="29.0" progress="0.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="813.0" prefWidth="1473.0" style="-fx-background-color: #969696;">
+               <children>
+                  <ImageView fx:id="forwardCtrl" fitHeight="100.0" fitWidth="100.0" layoutX="99.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#b99090" height="41.76" radius="16.675" width="26.94" />
+                     </effect>
+                  </ImageView>
+                  <Pane layoutX="25.0" layoutY="399.0" prefHeight="396.0" prefWidth="571.0" style="-fx-background-color: #3C3C3C;">
+                     <children>
+                        <Button fx:id="autopBtn" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#autoPilotOnAction" prefHeight="99.0" prefWidth="100.0" style="-fx-background-image: ../robot/assets/login/images.png;" styleClass="autoPilot">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <ImageView fx:id="autoProImg" fitHeight="353.0" fitWidth="380.0" layoutX="173.0" layoutY="21.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../assets/login/c4b19969def51164ea4ad9a290a217bf.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Pane>
+                  <Pane fx:id="manualPane" layoutX="23.0" layoutY="18.0" prefHeight="353.0" prefWidth="571.0" style="-fx-background-color: #3C3C3C;">
+                     <children>
+                        <Polygon fill="DODGERBLUE" layoutX="221.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE">
+                          <points>
+                            <Double fx:value="-50.0" />
+                            <Double fx:value="40.0" />
+                            <Double fx:value="50.0" />
+                            <Double fx:value="40.0" />
+                            <Double fx:value="0.0" />
+                            <Double fx:value="-60.0" />
+                          </points>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Polygon>
+                        <Polygon fill="DODGERBLUE" layoutX="221.0" layoutY="215.0" rotate="180.0" stroke="BLACK" strokeType="INSIDE">
+                           <points>
+                              <Double fx:value="-50.0" />
+                              <Double fx:value="40.0" />
+                              <Double fx:value="50.0" />
+                              <Double fx:value="40.0" />
+                              <Double fx:value="0.0" />
+                              <Double fx:value="-60.0" />
+                           </points>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Polygon>
+                        <Polygon fill="DODGERBLUE" layoutX="346.0" layoutY="215.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE">
+                           <points>
+                              <Double fx:value="-50.0" />
+                              <Double fx:value="40.0" />
+                              <Double fx:value="50.0" />
+                              <Double fx:value="40.0" />
+                              <Double fx:value="0.0" />
+                              <Double fx:value="-60.0" />
+                           </points>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Polygon>
+                        <Polygon fill="DODGERBLUE" layoutX="95.0" layoutY="215.0" rotate="270.0" stroke="BLACK" strokeType="INSIDE">
+                           <points>
+                              <Double fx:value="-50.0" />
+                              <Double fx:value="40.0" />
+                              <Double fx:value="50.0" />
+                              <Double fx:value="40.0" />
+                              <Double fx:value="0.0" />
+                              <Double fx:value="-60.0" />
+                           </points>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Polygon>
+                        <Circle fill="#f50303" layoutX="493.0" layoutY="50.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label fx:id="wt" layoutX="207.0" layoutY="81.0" prefHeight="35.0" prefWidth="28.0" text="W" textFill="#fcfcfc">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="at" layoutX="104.0" layoutY="197.0" text="A" textFill="#fcfcfc">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="st" layoutX="218.0" layoutY="197.0" text="S" textFill="#fcfcfc">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dt" layoutX="332.0" layoutY="197.0" text="D" textFill="#fcfcfc">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
